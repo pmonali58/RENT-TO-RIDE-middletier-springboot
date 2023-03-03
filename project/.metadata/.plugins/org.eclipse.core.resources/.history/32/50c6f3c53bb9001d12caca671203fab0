@@ -1,0 +1,17 @@
+package com.example.demo.entities;
+
+public class Owner {
+	
+	int own_id;
+	
+	String fname,lname,contact;
+	
+	Address a_id;
+	
+	Login login_id;
+	
+	String govn_id_no;
+	
+	byte govn_id_img;
+
+}
