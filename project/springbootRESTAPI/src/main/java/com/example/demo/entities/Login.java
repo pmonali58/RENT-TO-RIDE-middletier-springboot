@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Login {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int login_id;
 	String email_id;
 	String password;
@@ -61,6 +61,12 @@ public class Login {
 
 	public void setRole_name(String role_name) {
 		this.role_name = role_name;
+	}
+
+	@Override
+	public String toString() {
+		return "Login [login_id=" + login_id + ", email_id=" + email_id + ", password=" + password + ", role_name="
+				+ role_name + "]";
 	}
 	
 }

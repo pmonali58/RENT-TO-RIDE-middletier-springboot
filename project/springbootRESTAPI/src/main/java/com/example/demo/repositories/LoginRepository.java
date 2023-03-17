@@ -14,4 +14,8 @@ public interface LoginRepository extends JpaRepository<Login, Integer> {
 	@Query("select l from Login l where email_id=:email_id and password=:password")
 	public Optional<Login> getLogin(String email_id,String password);
 	
+	@Query("select l from Login l where login_id=:id")
+	public Login getLoginById(int id);
+	
+	
 }

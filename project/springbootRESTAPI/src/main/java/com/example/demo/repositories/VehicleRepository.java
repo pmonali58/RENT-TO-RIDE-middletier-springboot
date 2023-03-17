@@ -26,4 +26,16 @@ public interface VehicleRepository extends JpaRepository<Vehicle, Integer> {
 	@Query("update Vehicle set vehimage =:file where veh_id=:id")
 	public int uploadphoto(int id,byte[]file);
 	
+	@Query("select v from Vehicle v where istatus =0")
+	 public List<Vehicle> UnapproveVeh();
+	 
+	 @Modifying
+	 @Query("update Vehicle set istatus=1 where veh_id=:id")
+	 public int approveVeh(int id);
+	 
+    @Query("select v from Vehicle  v where is_book= 0")
+	 public List<Vehicle> findAllByBook();
+    
+
+	
 }

@@ -1,5 +1,7 @@
 package com.example.demo.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +35,17 @@ public class CustomerService {
 			return false;
 		}
 		  
+	}
+	public List<Customer> UnapproveCust()
+	{
+		return crepo.UnapproveCust();
+	}
+	
+	public int approveCust(int cust_id)
+	{
+		System.out.println(cust_id);
+		return crepo.approveCust(cust_id);
+		
 	}
 
 }

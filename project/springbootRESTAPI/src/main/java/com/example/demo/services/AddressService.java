@@ -21,4 +21,8 @@ public class AddressService {
 	{
 		return arepo.save(a);
 	}
+	public Address getById(int a_dd)
+	{
+		return arepo.findById(a_dd).get();
+	}
 }

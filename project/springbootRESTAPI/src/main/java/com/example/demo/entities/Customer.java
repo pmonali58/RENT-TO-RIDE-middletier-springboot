@@ -26,7 +26,7 @@ public class Customer {
 	int age;
 	String dl_number;
 	byte []dl_image;
-	
+	int istatus;
 	
 	public Customer() {
 		super();
@@ -35,7 +35,7 @@ public class Customer {
 
 
 	public Customer(String fname, String lname, String contact, Address a_id, Login login_id,int age,
-			String dl_number) {
+			String dl_number,int istatus) {
 		super();
 		
 		this.fname = fname;
@@ -46,6 +46,17 @@ public class Customer {
 		this.age=age;
 		this.dl_number = dl_number;
 		//this.dl_image = dl_image;
+		this.istatus=istatus;
+	}
+
+
+	public int getIstatus() {
+		return istatus;
+	}
+
+
+	public void setIstatus(int istatus) {
+		this.istatus = istatus;
 	}
 
 
@@ -127,6 +138,14 @@ public class Customer {
 	}
 
 
+	@Override
+	public String toString() {
+		return "Customer [cust_id=" + cust_id + ", fname=" + fname + ", lname=" + lname + ", contact=" + contact
+				+ ", a_id=" + a_id + ", login_id=" + login_id + ", age=" + age + ", dl_number=" + dl_number
+				+ ", dl_image=" + Arrays.toString(dl_image) + ", istatus=" + istatus + "]";
+	}
+
+
 	/*public byte[] getDl_image() {
 		return dl_image;
 	}
@@ -137,11 +156,7 @@ public class Customer {
 	}*/
 
 
-	@Override
-	public String toString() {
-		return "Customer [cust_id=" + cust_id + ", fname=" + fname + ", lname=" + lname + ", contact=" + contact
-				+ ", a_id=" + a_id + ", login_id=" + login_id + ", age=" + age + ",dl_number=" + dl_number + "]";
-	}
+	
 	
 	
 	

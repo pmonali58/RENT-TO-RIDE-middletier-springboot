@@ -1,4 +1,5 @@
 package com.example.demo.repositories;
+import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -23,5 +24,11 @@ import com.example.demo.entities.Customer;
 		@Query("update Customer set dl_image=:file where cust_id=:id")
 		public int uploadphoto(int id,byte[]file);
 
-	}
-
+	
+ @Query("select c from Customer c where istatus =0")
+ public List<Customer> UnapproveCust();
+ 
+ @Modifying
+ @Query("update Customer set istatus=1 where cust_id=:id")
+ public int approveCust(int id);
+}

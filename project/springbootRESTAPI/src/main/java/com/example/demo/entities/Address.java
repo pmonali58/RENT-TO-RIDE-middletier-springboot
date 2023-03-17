@@ -1,7 +1,7 @@
 package com.example.demo.entities;
 
 import javax.persistence.Column;
-
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
+@Embeddable
 @Table(name="address")
 public class Address {
 	
@@ -85,6 +86,12 @@ public class Address {
 	}
 	public void setPincode(String pincode) {
 		this.pincode = pincode;
+	}
+
+	@Override
+	public String toString() {
+		return "Address [a_id=" + a_id + ", apartment_no=" + apartment_no + ", area=" + area + ", city=" + city
+				+ ", state=" + state + ", country=" + country + ", pincode=" + pincode + "]";
 	}
 	
 	

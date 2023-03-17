@@ -1,6 +1,7 @@
 package com.example.demo.entities;
 import java.util.Arrays;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,19 +31,27 @@ public class Vehicle {
 	//@ManyToOne
 	//@JoinColumn(name= "own_id")
 	//Owner owner;
-	@Column
+
 	int own_id;
+
+    double charges_per_hour;
+    double charges_per_day;
+    int is_book;
 	public Vehicle() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Vehicle(String veh_name, String type, String plate_number, int istatus,int own_id) {
+	public Vehicle(String veh_name, String type, String plate_number, int istatus, int own_id, double charges_per_hour,
+			double charges_per_day, int is_book) {
 		super();
 		this.veh_name = veh_name;
 		this.type = type;
 		this.plate_number = plate_number;
 		this.istatus = istatus;
-		this.own_id=own_id;
+		this.own_id = own_id;
+		this.charges_per_hour = charges_per_hour;
+		this.charges_per_day = charges_per_day;
+		this.is_book = is_book;
 	}
 	public int getVeh_id() {
 		return veh_id;
@@ -74,10 +83,10 @@ public class Vehicle {
 	public void setVehimage(byte[] vehimage) {
 		this.vehimage = vehimage;
 	}
-	public int IStatus() {
+	public int getIstatus() {
 		return istatus;
 	}
-	public void setIStatus(int istatus) {
+	public void setIstatus(int istatus) {
 		this.istatus = istatus;
 	}
 	public int getOwn_id() {
@@ -86,11 +95,29 @@ public class Vehicle {
 	public void setOwn_id(int own_id) {
 		this.own_id = own_id;
 	}
+	public double getCharges_per_hour() {
+		return charges_per_hour;
+	}
+	public void setCharges_per_hour(double charges_per_hour) {
+		this.charges_per_hour = charges_per_hour;
+	}
+	public double getCharges_per_day() {
+		return charges_per_day;
+	}
+	public void setCharges_per_day(double charges_per_day) {
+		this.charges_per_day = charges_per_day;
+	}
+	public int getIs_book() {
+		return is_book;
+	}
+	public void setIs_book(int is_book) {
+		this.is_book = is_book;
+	}
 	@Override
 	public String toString() {
 		return "Vehicle [veh_id=" + veh_id + ", veh_name=" + veh_name + ", type=" + type + ", plate_number="
-				+ plate_number + ", vehimage=" + Arrays.toString(vehimage) + ", istatus=" + istatus + ", own_id=" + own_id
-				+ "]";
+				+ plate_number + ", istatus=" + istatus + ", own_id=" + own_id + ", charges_per_hour="
+				+ charges_per_hour + ", charges_per_day=" + charges_per_day + ", is_book=" + is_book + "]";
 	}
 	
 	
